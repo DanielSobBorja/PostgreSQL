@@ -17,7 +17,7 @@ PostgreSQL is a flexible open-source object relational database management syste
 ### Activity 1.
 #### Create a user named 'alumne' with password 'passalu' using `createuser`.
 
-We use the following command and enter its password as requested:
+We use createuser with -P for password prompting and then we enter its password as requested:
 ```
 createuser alumne -P
 ```
@@ -26,7 +26,7 @@ createuser alumne -P
 ### Activity 2.
 #### Create a user named 'alumne0' with password 'passalu' and make it superuser using `createuser`.
 
-We use the following command and enter its password as requested:
+We use `createuser` with -P for password prompting and -s for superuser. Then we enter its password as requested:
 ```
 createuser alumne0 -P -s
 ```
@@ -35,6 +35,7 @@ createuser alumne0 -P -s
 ### Activity 3.
 #### Create a database named 'aludb' with `createdb`. Make alumne0 the owner.
 
+The parameter -O makes the following user the owner.
 ```
 createdb aludb -O alumne0
 ```
@@ -53,12 +54,12 @@ INSERT INTO R VALUES (1,'a'), (2,'b'), (3,'c'), (4,'d');
 ```
 psql
 ```
-![](Img/Maven.png)
+![](Img/a4.1.png)
 2. Connect to the database with alumne0:
 ```
 \c aludb alumne0
 ```
-![](Img/Maven.png)
+![](Img/a4.2.png)
 3. Create the table and insert some contents:
 ```
 CREATE TABLE R (A primary key, B text);
@@ -69,7 +70,7 @@ INSERT INTO R VALUES (1,'a'), (2,'b'), (3,'c'), (4,'d');
 ```
 \q
 ```
-![](Img/Maven.png)
+![](Img/a4.4.png)
 
 ### Activity 5.
 #### Execute the following select with user alumne in aludb.
@@ -77,7 +78,7 @@ INSERT INTO R VALUES (1,'a'), (2,'b'), (3,'c'), (4,'d');
 ```
 psql
 ```
-![](Img/Maven.png)
+![](Img/a4.1.png)
 2. Connect to the database with alumne:
 ```
 \c aludb alumne
@@ -87,28 +88,29 @@ psql
 ```
 SELECT * FROM R;
 ```
-![](Img/Maven.png)
-
+![](Img/a5.png)
 4. Exit sql mode with:
 ```
 \q
 ```
-![](Img/Maven.png)
+![](Img/a4.4.png)
 ### Activity 6.
 #### Allow alumne to perform SELECT on the table.
 1. Enter sql mode with:
 ```
 psql
 ```
+![](Img/a4.1.png)
 2. Connect to the database with alumne0:
 ```
 \c aludb alumne0
 ```
+![](Img/a4.2.png)
 3. Grant SELECT to alumne on the table R:
 ```
 GRANT SELECT ON R TO alumne;
 ```
-
+![](Img/a6.1.png)
 4. Exit sql mode with:
 ```
 \q
@@ -124,25 +126,25 @@ SELECT * FROM R;
 ```
 psql
 ```
-![](Img/Maven.png)
+![](Img/a4.1.png)
 2. Connect to the database with alumne:
 ```
 \c aludb alumne
 ```
-![](Img/Maven.png)
-
+![](Img/a7.2.png)
 3. Do the select:
 ```
 SELECT * FROM R;
 ```
-![](Img/Maven.png)
-
+![](Img/a7.3.png)
 4. Exit sql mode with:
 ```
 \q
 ```
-![](Img/Maven.png)
+![](Img/a4.4.png)
 
 ### Activity 8.
 #### Delete the created database and users.
 
+We drop the database using `dropdb` and then the users using `dropuser`.
+![](Img/Maven.png)
