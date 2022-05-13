@@ -147,5 +147,5 @@ SELECT * FROM R;
 #### Delete the created database and users.
 
 We drop the database using `dropdb` and then the users using `dropuser`.
-![](Img/a8.png)
 ![](Img/a8.1.png)
+![](Img/a8.png)
