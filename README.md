@@ -1,3 +1,4 @@
+![](Img/logo.png)
 # PostgreSQL
 ## Noelia Crespí & Daniel Sobrino
 
